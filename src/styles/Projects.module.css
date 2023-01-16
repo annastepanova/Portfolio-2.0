@@ -1,0 +1,95 @@
+.project_content {
+  list-style: none;
+  padding: 0px;
+  margin: 72px 0px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  position: relative;
+}
+
+.project_links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.link {
+  width: 30px;
+  height: 30px;
+}
+
+.link a {
+  z-index: 1;
+  position: relative;
+  color: #8892b0;
+}
+
+.project_card {
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: 2rem 1.75rem;
+  border-radius: 4px;
+  background-color: rgb(17, 58, 64, 0.85);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  overflow: auto;
+  color: #ccd6f6;
+  position: relative;
+}
+
+.project_card:hover {
+  box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+  transform: translateY(-7px);
+  cursor: pointer;
+}
+
+.project_card .project_title:hover a {
+  color: #ff3c63;
+}
+
+.link:hover a {
+  color: #ff3c63;
+}
+
+.project_card a {
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.project_title a {
+  z-index: 1;
+  position: static;
+  color: #ccd6f6;
+}
+
+.project_title a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.project_topics {
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  list-style: none;
+}
+
+.project_topics li {
+  margin-right: 15px;
+  font-size: 13px;
+  font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, monospace;
+}
