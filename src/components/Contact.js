@@ -49,7 +49,6 @@ export default function Contact () {
         label='Email Address'
         name='email'
         autoComplete='email'
-        autoFocus
       />
       <TextField
         margin='dense'
@@ -59,7 +58,6 @@ export default function Contact () {
         id='message'
         label='Type your message'
         name='message'
-        autoFocus
       />
       <Button
         type='submit'

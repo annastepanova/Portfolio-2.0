@@ -74,3 +74,9 @@
   background-color: #e63254;
   border: 1px solid #e63254;
 }
+
+@media only screen and (max-width: 770px) {
+  .nav_icons li {
+      margin-right: 8px;
+    }
+}

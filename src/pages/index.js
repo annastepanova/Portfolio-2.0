@@ -16,6 +16,7 @@ import Footer from '../components/Footer'
 
 export default function Home({ projects }) {
   const mobileScreen = useMediaQuery('(max-width:770px)')
+  const desktopScreen = useMediaQuery('(min-width:771px)')
   const [show, setShow] = React.useState(false)
 
   const renderSkills = () => {
@@ -96,7 +97,7 @@ export default function Home({ projects }) {
       </Head>
 
       <main>
-        {mobileScreen ? <MobileNavbar/> : <Navbar/>}
+        {mobileScreen ? <MobileNavbar/> : desktopScreen ? <Navbar/> : null}
         <section id='home' className={classnames(styles.bg_home, 'section')}>
           <div className={styles.bg_overlay}></div>
           <div className={styles.home_section}>

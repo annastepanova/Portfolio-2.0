@@ -2,24 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
 import classnames from 'classnames'
 import SMLinks from './shared/SocialLinks'
+import useScroll from '../hooks/useScroll'
 
 import styles from '../styles/Navbar.module.css'
 
 export default function Navbar() {
-  const [scroll, setScroll] = useState(false)
-
-  const changeBackground = () => {
-    if (window.scrollY >= 66) {
-      setScroll(true)
-    } else {
-      setScroll(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", changeBackground)
-    return () => window.removeEventListener("scroll", changeBackground)
-  }, [])
+  const scroll = useScroll()
 
   return (
     <nav className={scroll ? classnames(styles.navbar, styles.nav_scroll) : styles.navbar}>

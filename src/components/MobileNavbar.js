@@ -12,15 +12,20 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import SMLinks from './shared/SocialLinks'
+import useScroll from '../hooks/useScroll'
 
 const styles = {
-  appbar: {
-    backgroundColor: '#4e525d'
-  },
   toolbar: {
     height: 70,
     display: 'flex', 
     justifyContent: 'flex-end'
+  },
+  appbarTransparent: {
+    backgroundColor: 'transparent',
+    boxShadow: 'none'
+  },
+  appbarColored: {
+    backgroundColor: '#4e525d'
   },
   wrapper: {
     width: 'min(60vw, 300px)',
@@ -37,13 +42,17 @@ const styles = {
     width: '50%',
     flexDirection: 'column',
     textAlign: 'center',
-    color: '#FFF'
+    color: '#FFF',
+    fontSize: '19px'
   }
 }
 
 const Drawer = () => {
   const [open, setOpen] = React.useState(false)
-  const trigger = useScrollTrigger()
+  const trigger = useScrollTrigger({
+    threshold: 0
+  })
+  const scroll = useScroll()
 
   const links = () => (
     <Box
@@ -68,7 +77,7 @@ const Drawer = () => {
 
   return (
     <Slide in={!trigger}>
-      <AppBar open={open} sx={styles.appbar}>
+      <AppBar open={open} sx={scroll ? styles.appbarColored : styles.appbarTransparent}>
         <Toolbar sx={styles.toolbar}>
           <IconButton
             color='inherit'
